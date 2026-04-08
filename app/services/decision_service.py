@@ -32,7 +32,6 @@ class DecisionService:
     def topsis(self, criteria: List[Criterion], alternatives: List[Alternative]) -> List[Tuple[str, float]]:
         criteria = self.normalize_weights(criteria)
 
-        # Векторна нормалізація
         denominators: Dict[str, float] = {}
         for c in criteria:
             denominators[c.name] = sqrt(sum(alt.scores[c.name] ** 2 for alt in alternatives))
