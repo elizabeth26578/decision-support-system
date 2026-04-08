@@ -5,7 +5,7 @@ from dataclasses import dataclass
 class Criterion:
     name: str
     weight: float
-    criterion_type: str  # "maximize" or "minimize"
+    criterion_type: str  
 
     def validate(self) -> None:
         if self.criterion_type not in ("maximize", "minimize"):
